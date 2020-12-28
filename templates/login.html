@@ -1,0 +1,79 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+body{
+  /* The image used */
+  background-image: url("{% static 'images/grocery.jpeg' %}");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow:hidden;
+}
+.form{
+background-color:white;
+border-radius:8px;
+box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+margin-left:auto;
+margin-right:auto;
+padding:30px;
+width:40%;
+}
+</style>
+</head>
+<body>
+<!--<script>
+function validate(){
+  var userName = document.getElementById('user-name').value;
+  var passCode = document.getElementById('pwd').value;
+  var userRGEX = /^(?=.*[A-Z])(?=.*[a-z]).{0,}$/;
+  var passRGEX = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$/;
+  var userResult = userRGEX.test(userName);
+  var passResult = passRGEX.test(passCode);
+if(userResult == false&&userResult!="")
+{
+alert('user name contain only characters');
+return false;
+}
+ 
+if(passResult == false)
+{
+alert(' password should contain a number, a lowercase letter and a capital case letter. And it should be at least eight characters long');
+return false;
+}
+ 
+  return true;
+}</script>-->
+
+<!-- <form onsubmit="validate()"> -->
+<div class="form">
+<form method="POST" action="login" class="form-group">
+<center><h2> LOGIN </h2></center>
+{% for message in messages %}
+<h1>{{message}}</h1>
+{% endfor %}
+{% csrf_token %}
+
+<label for="username"><b>Username</b></label>
+<input type="textbox" id=user-name placeholder="Enter Username" class="form-control" name="username"/>
+<br>
+<label for="pwd"><b>Password</b></label>
+<input type="password" id=pwd placeholder="Enter Password" class="form-control" name="pwd"/>
+<br>
+<input type="submit" class="btn btn-primary" style="float:left" value="Login" />
+<input type="reset" class="btn btn-danger" style="float:right" value="cancel" />
+</form>
+</div>
+</body>
+
+</html>

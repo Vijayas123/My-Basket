@@ -1,0 +1,94 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+    <head>
+        <title>Buynow</title>
+        <meta charset=utf-8>
+<meta name="viewport" content="width=device-width" intial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+    td{
+        padding:20px;
+    }
+    input[type=text],input[type=number]{
+        width:260px;
+        color:white;
+        height:35px;
+        outline:none;
+        border-radius:8px;
+        background-color: transparent;
+    }
+    label{
+        color:white;
+    }
+    body{
+      background-color: rgb(25,40,73);
+    }
+    h3{
+        color:white;
+    }
+    textarea{
+        background-color: transparent;
+        color:white;
+    }
+    </style>
+<body>
+    <div class="container">
+        <div class="row">
+               
+                <div class="col-sm-4">
+                        <img src="{{baseUrl}}/{{Item_info.img_name}}" class="img-responsive" style="width:300px;height:550px;padding-top:50px" alt="Image">
+                    </div>
+                    <div class="col-sm-4">
+                        {% if user.is_authenticated %}
+                        <form action="order" id="formid">
+                            <h3>{{Item_info.item_name}}</h3>
+                            <table>
+                                <tr>
+                            <td><label>Quantity:</label></td>
+                            <td><input type="number" name="user_quantity" value="{{userquantity}}" readonly/></td>
+                            </tr>
+                            <tr>
+                            <td><label>Price:</label></td>
+                                <td><input type="number" name="price" value="{{price}}" readonly/></td>
+                            </tr>
+                            <tr>
+                            <input type="number" name="item_id" value={{Item_info.item_id}} hidden/>
+                            <td><label>Mobile No:</label></td>
+                                <td><input type="text" name="mobileno" value="{{mobileno}}"/></td>
+                            </tr>
+                            <tr>
+                                    <td><label>Email:</label></td>
+                                        <td><input type="text" name="email" value="{{user.email}}"/></td>
+                            </tr>
+                            <tr>
+                                    <td><label>Address:</label></td>
+                                        <td><textarea type="text" rows="7" cols="30" name="address"  form="formid">{{address}}</textarea></td>
+                            </tr>
+                            </table>
+                            <input type="submit" id="btn" value="Order" style="background-color: dodgerblue;border-radius:8px;color:white;font-size:20px;border:none;width:400px;height:40px;" onclick="check()">
+                            
+                            <input type="hidden" name="transaction_id" id="transaction_id" />
+                        
+                        </form>
+                        {% else %}
+                        <h1 style="color:white">Register and Login to order</h1>
+                        {% endif %}
+                    </div>
+                    <script>
+                        function check(){
+                            document.getElementById('transaction_id').value=Date.now();
+                            document.getElementById('btn').style.display="none";
+                        }
+                    </script>
+        </div>
+    </div>
+       
+       
+        
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{class_name}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    body{
+      margin-top: 15px;
+      background-color: white;
+    }
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    p{
+      color:black;
+    }
+	.item{
+	margin:20px;
+	box-shadow:0px 0px 5px rgba(0,0,0,0.2);
+	}
+	.item:hover{
+	box-shadow:0px 0px 15px rgba(0,0,0,0.5);
+	}
+  </style>
+</head>
+<body>
+    <div class="container">    
+        <div class="row">
+
+    {% for item in Items_list %}
+    <a  href="#" onclick="document.getElementById('{{item.item_id}}').submit()"  style="outline:none;border:none;">
+    <div class="col-lg-3 col-md-4 col-sm-4 item" >
+        <form id="{{item.item_id}}" action="product">
+            <input type="hidden" name="item_id" value="{{item.item_id}}" >
+            <input type="submit" style="display: none;">
+          </form>
+      <div class="panel panel-primary" style="background-color: transparent;outline:none;border:none;">
+                       <!-- <div class="panel-heading">BLACK FRIDAY DEAL</div> -->
+        <div class="panel-body" >
+          <center><img src="{{baseUrl}}/{{item.img_name}}" class="img-responsive" style="width:70px;height:100px" alt="Image"></center></div>    
+        <div class="panel-footer" ><p>Item name:{{item.item_name}}</p><p>Price:${{item.price}}.00 </p><p> Quantity:{{item.quantity}}</p></div>
+
+      </div>
+    </div>
+
+  </a>
+   
+    
+    {% endfor %}
+        </div>
+		</div>
+<footer class="container-fluid text-center">
+  <p>Online Store Copyright</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
+
+</body>
+</html>

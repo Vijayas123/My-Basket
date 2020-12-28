@@ -1,0 +1,61 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+    <head>
+        <title>Buynow</title>
+        <meta charset=utf-8>
+<meta name="viewport" content="width=device-width" intial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+      
+     
+    
+      body{
+      margin-top: 15px;
+      color:white;
+      background-color: rgb(25,40,73);
+    }
+  </style>
+    </head>
+<body>
+    <div class="container">
+        <center><h2>My Orders</h2></center>
+        <div class="row">
+                {% for item in buy_list %}
+                        
+                        {% for items in Item_info %}
+                            {% if item.item_id == items.item_id %}
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="{{baseUrl}}/{{items.img_name}}" class="img-responsive" style="width:250px;height:350px" alt="Image">
+                                </div>
+                                <div class="col-sm-4"> 
+                                    <h3>Item:{{items.item_name}}</h3>
+                                    <h3>Brand:{{items.brand_name}}</h3>
+                                </div>
+                            <!-- </div> -->
+                            {% endif %}
+                        {% endfor %}
+                                <div class="col-sm-4">
+                                    <h3>Transaction Id : {{item.transaction_id}}</h3>
+                                    <h3>${{item.price}}</h3>
+                                    <h3>Quantity:{{item.user_quantity}}</h3>
+                                    <h3>Email:{{item.email}}</h3>
+                                    <h3>Mobileno:{{item.mobileno}}</h3>
+                                    <h3>Address:{{item.address}}</h3>
+                                    <br></br><br></br>
+                                </div> 
+                            </div>   
+                                                
+            {% endfor %}
+        </div>
+    </div>
+       
+       
+        
+</body>
+</html>

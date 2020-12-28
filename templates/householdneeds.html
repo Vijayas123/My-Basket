@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% static "images" as baseUrl %}
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house1.jpg' %}" class="img-responsive" style="width:70%" alt="Image"></div>
+	<div class="panel-footer">Price:$65.00 id:513</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house2.jpg' %}" class="img-responsive" style="width:98%" alt="Image"></div>
+        <div class="panel-footer">Price:$35.00id:514</div>
+<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><center><img src="{% static 'images/house3.jpg' %} class="img-responsive" style="width:74%" alt="Image"></center></div>
+        <div class="panel-footer">Price:$55.00 id:515</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><center><img src="{% static 'images/house4.png' %}" class="img-responsive" style="width:43%" alt="Image"></center></div>
+        <div class="panel-footer">Price:$45.00 id:516</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><center><img src="{% static 'images/house5.jpg' %}" class="img-responsive" style="width:80%" alt="Image"></center></div>
+        <div class="panel-footer">Price:$75.00 id:517</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><center><img src="{% static 'images/house6.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></center></div>
+        <div class="panel-footer">Price:$54.00 id:518</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house7.jpg' %}" class="img-responsive" style="width:67%" alt="Image"></div>
+        <div class="panel-footer">Price:$35.00 <td><td>id:519</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house8.jpg' %}" class="img-responsive" style="width:67%" alt="Image"></div>
+        <div class="panel-footer">Price:$85.00 id:520</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house9.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:$65.00 id:521</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house10.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:$120.00 id:522</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house11.jpg' %}" class="img-responsive" style="width:75%" alt="Image"></div>
+        <div class="panel-footer">Price:$132.00 id:523</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house12.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Price:$55.00 id:524</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><center><img src="{% static 'images/house13main.jfif' %}" class="img-responsive" style="width:70%" alt="Image"></center></div>
+        <div class="panel-footer">Price:$110.00 id:525</div>	
+<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><center><img src="{% static 'images/house14main.jpg' %}" class="img-responsive" style="width:86%" alt="Image"></center></div>
+        <div class="panel-footer">Price:$125.00 id:526</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="{% static 'images/house15.jpg' %}" class="img-responsive" style="width:70%" alt="Image"></div>
+        <div class="panel-footer">Price:$100.00 id:527</div>
+	<center>
+	 <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+        </a>
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+        </a></center>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+
+<footer class="container-fluid text-center">
+  <p>Online Store Copyright</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
+
+</body>
+</html>

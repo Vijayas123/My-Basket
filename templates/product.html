@@ -1,0 +1,97 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+    <head>
+        <title>{{Item_name}}</title>
+        <meta charset=utf-8>
+<meta name="viewport" content="width=device-width" intial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    h1{
+      color:white;
+    }
+    select{
+      color:white;
+      background-color:transparent;
+      height:40px;
+      width:100px;
+      cursor: pointer;
+    }
+    option{
+      color:white;
+      background-color:rgb(25,40,73);
+     
+     
+    }
+    body{
+      background-color: rgb(25,40,73);
+    }
+  </style>
+    </head>
+<body>    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                    <img src="{{baseUrl}}/{{Item_info.img_name}}" class="img-responsive" style="width:300px;height:500px;padding-top:50px;" alt="Image">
+            </div>
+            <div class="col-sm-4" style="padding-top:50px;">
+                <form id="form2id" action="buynow">
+                    <input type="number" name="item_id" value={{Item_info.item_id}} hidden>
+                    
+                    <input type="submit" style="display: none;">
+                    <h1>{{Item_info.item_name}}</h1>
+                    <h1>Rs. {{Item_info.price}} </h1>
+                    <span style="color:white;font-size:30px;">Quantity :</span>
+                    <!-- {% with quan=1000 %}      -->
+                   
+                    {% if Item_info.quantity == 1000 %}
+                    <select name="userquantity" value="1000">
+                        <option value="10000">10000 gms</option>
+                        <option value="5000">5000 gms</option>
+                        <option value="2500">2500 gms</option>
+                      <option value="1000">1000 gms</option>
+                      <option value="500">500 gms</option>
+                      <option value="250">250 gms</option>
+                    </select>
+                    {% else %} 
+                    <select name="userquantity" value="1">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                    {% endif %}
+                  </form>
+                    <!-- {% endwith %} -->
+                    <h1>{{Item_info.brand_name}}</h1>
+                    <br>
+                    <br>
+                    <br>
+                   
+                    {% if user.is_authenticated %}
+                        <form id="formid" action="addtocart">
+                          <input type="hidden" name="item_id" value="{{Item_info.item_id}}">
+                          <input type="submit" style="display: none;">
+                        </form>
+                        <a href="#" onclick="document.getElementById('formid').submit()" class="btn btn-info btn-lg">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+                              </a>
+                    {% endif %}
+                              
+                            
+                              <a href="#" onclick="document.getElementById('form2id').submit()"  %}" class="btn btn-info btn-lg">
+                              <!--<a href="#" class="btn btn-info btn-lg">-->
+                                <span class="glyphicon glyphicon-shopping-cart"></span> Buy Now
+                              </a>
+                             
+            </div>
+        </div>
+    </div>
+       
+       
+        
+</body>
+</html>

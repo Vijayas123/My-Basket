@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Your Profile</title>
+        <style>
+                td{
+                    padding:20px;
+                }
+                input[type=text],input[type=number]{
+                    width:260px;
+                    color:white;
+                    height:35px;
+                    outline:none;
+                    border-radius:8px;
+                    background-color: transparent;
+                }
+                label{
+                    color:white;
+                }
+                body{
+                  background-color: rgb(25,40,73);
+                }
+                h3{
+                    color:white;
+                }
+                textarea{
+                    background-color: transparent;
+                    color:white;
+                }
+                body{
+            background-color: rgb(25,40,73);
+            color:white;
+        }
+                </style>
+    </head>
+    <body>
+        <!-- {% if user.is_authenticated %} -->
+        <!-- <h1>Username:{{user.username}}</h1>
+        <h1>Email Id:{{user.email}}</h1>
+        <h1>Phone no:{{mobileno}}</h1>
+        <h1>Address:{{address}}</h1>  -->
+        <!-- {% endif %} -->
+        <center><h1>Profile</h1></center>
+        <center> <form action="updateprofile" id="formid">
+            <h1>Username:{{user.username}}</h1>
+            <table>
+            <!-- <tr>
+            <td><label></label></td>
+            <td><input type="text" name="username" value="{{user.username}}" readonly/></td>
+            </tr> -->
+            <tr>
+                    <td><label>Email:</label></td>
+                        <td><input type="text" name="email" value="{{user.email}}"/></td>
+            </tr>
+            <tr>
+            <td><label>Mobile No:</label></td>
+                <td><input type="text" name="mobileno" value="{{mobileno}}"/></td>
+            </tr>
+            
+            <tr>
+                    <td><label>Address:</label></td>
+                        <td><textarea type="text" rows="7" cols="30" name="address"  form="formid">{{address}}</textarea></td>
+            </tr>
+            </table>
+            <input type="submit" id="btn" value="Update" style="background-color: dodgerblue;border-radius:8px;color:white;font-size:20px;border:none;width:400px;height:40px;" onclick="check()">
+        </center></form>
+    </body>
+</html>

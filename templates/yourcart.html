@@ -1,0 +1,75 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+    <head>
+        <title>Your Cart</title>
+        <meta charset=utf-8>
+<meta name="viewport" content="width=device-width" intial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style> body{
+      margin-top: 15px;
+      color:black;
+      background-color: #708490;
+    }
+   </style>
+    </head>
+<body>
+   
+    <center><h2>My Cart</h2></center>
+    {% if cart_list|length == 0 %}
+    <h1>No items in your cart</h1>
+    {% endif %}
+    <div class="container">
+                {% for item in cart_list %}
+               
+                        {% for items in Item_info %}
+                            {% if item.item_id == items.item_id %}
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="{{baseUrl}}/{{items.img_name}}" class="img-responsive" style="width:200px;height:240px" alt="Image">
+                                </div>
+                                <div class="col-sm-4">
+                                        <form id="items.item_id" action="buynow">
+                                                <input type="number" name="item_id" value={{items.item_id}} hidden>
+                                                <h3>{{items.item_name}}</h3>
+                                                <input type="submit" style="display: none;">
+                                                <h1>Rs. {{items.price}} </h1>
+                                                <h1> Quantity :</h1>
+                                               
+                                            
+                                                {% if items.quantity == 1000 %}
+                                                <select name="userquantity" value="1000">
+                                                <option value="1000">1000 gms</option>
+                                                <option value="500">500 gms</option>
+                                                <option value="250">250 gms</option>
+                                                </select>
+                                                {% else %} 
+                                                <select name="userquantity" value="1">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                </select>
+                                               {% endif %}
+                                            </form>
+                                        
+                                        
+                                        <h3>{{items.brand_name}}</h3>
+                                       
+                                        <a href="{% url 'myapp:removefromcart' item_id=items.item_id %}" class="btn btn-info btn-lg">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>Remove from cart
+                                        </a>
+                                        <a href="#" onclick="document.getElementById('items.item_id').submit()" class="btn btn-info btn-lg">
+                                                <span class="glyphicon glyphicon-shopping-cart"></span>Buynow
+                                        </a>
+                                        <br></br><br></br>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+            {% endfor %}                  
+        </div> 
+</body>
+</html>
